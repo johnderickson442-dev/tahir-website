@@ -8,7 +8,6 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Close menu when a link is clicked
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
@@ -37,7 +36,6 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    // Navbar shadow on scroll
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
         navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
@@ -56,7 +54,6 @@ const btnLoading = document.querySelector('.btn-loading');
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // Show loading state
     btnText.style.display = 'none';
     btnLoading.style.display = 'inline';
     submitBtn.disabled = true;
@@ -84,14 +81,13 @@ contactForm.addEventListener('submit', async (e) => {
         formMessage.innerHTML = '<span class="error">⚠ There was an error. Please email us directly at tahirtrangc@gmail.com</span>';
         formMessage.className = 'error';
     } finally {
-        // Reset button state
         btnText.style.display = 'inline';
         btnLoading.style.display = 'none';
         submitBtn.disabled = false;
     }
 });
 
-// ===== SMOOTH SCROLL FOR SAFARI =====
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -121,8 +117,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe service cards and features
-document.querySelectorAll('.service-card, .feature').forEach(el => {
+document.querySelectorAll('.service-card, .feature, .gallery-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.6s ease';
